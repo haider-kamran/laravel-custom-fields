@@ -1,0 +1,65 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        $tables = config('custom-fields.tables', [
+            'field_groups'  => 'cf_field_groups',
+            'custom_fields' => 'cf_custom_fields',
+            'field_values'  => 'cf_field_values',
+        ]);
+
+        Schema::create($tables['field_groups'], function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('model_type')->index();
+            $table->boolean('is_active')->default(true);
+            $table->string('description')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create($tables['custom_fields'], function (Blueprint $table) use ($tables) {
+            $table->id();
+            $table->foreignId('group_id')->constrained($tables['field_groups'])->cascadeOnDelete();
+            $table->string('name');
+            $table->string('label');
+            $table->string('type'); // text, textarea, select, repeater, file, etc.
+            $table->json('options')->nullable(); // rules, config for select options
+            $table->boolean('required')->default(false);
+            $table->integer('order')->default(0);
+            $table->timestamps();
+
+            $table->unique(['group_id', 'name']); // name should be unique within a group
+        });
+
+        Schema::create($tables['field_values'], function (Blueprint $table) use ($tables) {
+            $table->id();
+            $table->string('model_type');
+            $table->unsignedBigInteger('model_id');
+            $table->foreignId('field_id')->constrained($tables['custom_fields'])->cascadeOnDelete();
+            $table->json('value')->nullable();
+            $table->timestamps();
+
+            $table->index(['model_type', 'model_id']);
+            $table->unique(['model_type', 'model_id', 'field_id']);
+        });
+    }
+
+    public function down(): void
+    {
+        $tables = config('custom-fields.tables', [
+            'field_groups'  => 'cf_field_groups',
+            'custom_fields' => 'cf_custom_fields',
+            'field_values'  => 'cf_field_values',
+        ]);
+
+        Schema::dropIfExists($tables['field_values']);
+        Schema::dropIfExists($tables['custom_fields']);
+        Schema::dropIfExists($tables['field_groups']);
+    }
+};

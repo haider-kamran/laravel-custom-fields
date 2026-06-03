@@ -1,0 +1,62 @@
+{
+    "name": "hyder-kamran/laravel-custom-fields",
+    "description": "A powerful, production-ready Laravel package for dynamic custom fields — attach any field type to any Eloquent model.",
+    "keywords": [
+        "laravel",
+        "custom-fields",
+        "acf",
+        "dynamic-fields",
+        "eloquent"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kamran Haider",
+            "email": "kamranhaider4475@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "illuminate/validation": "^10.0|^11.0|^12.0",
+        "illuminate/filesystem": "^10.0|^11.0|^12.0",
+        "illuminate/cache": "^10.0|^11.0|^12.0",
+        "illuminate/events": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0|^11.0",
+        "mockery/mockery": "^1.6",
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "HyderKamran\\CustomFields\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyderKamran\\CustomFields\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HyderKamran\\CustomFields\\CustomFieldsServiceProvider"
+            ],
+            "aliases": {
+                "CustomFields": "HyderKamran\\CustomFields\\Facades\\CustomFields"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
