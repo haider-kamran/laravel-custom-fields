@@ -101,6 +101,10 @@ return [
         'repeater' => \HyderKamran\CustomFields\Fields\RepeaterField::class,
         'json'     => \HyderKamran\CustomFields\Fields\JsonField::class,
         'color'    => \HyderKamran\CustomFields\Fields\ColorField::class,
+        'wysiwyg'  => \HyderKamran\CustomFields\Fields\WysiwygField::class,
+        'url'      => \HyderKamran\CustomFields\Fields\UrlField::class,
+        'time'     => \HyderKamran\CustomFields\Fields\TimeField::class,
+        'range'    => \HyderKamran\CustomFields\Fields\RangeField::class,
     ],
 
     /*

@@ -46,6 +46,10 @@ class Post extends Model
 
 ## Usage
 
+### Supported Field Types
+The package ships with 20 production-ready field types out of the box:
+`text`, `textarea`, `number`, `email`, `password`, `select`, `checkbox`, `radio`, `boolean` (switch), `date`, `datetime`, `time`, `url`, `color`, `range` (slider), `file`, `image`, `repeater`, `json`, and `wysiwyg`.
+
 ### 1. Creating Field Groups and Fields
 
 You can create Field Groups and assign them to specific models.

@@ -22,6 +22,10 @@ enum FieldType: string
     case Repeater = 'repeater';
     case Json     = 'json';
     case Color    = 'color';
+    case Wysiwyg  = 'wysiwyg';
+    case Url      = 'url';
+    case Time     = 'time';
+    case Range    = 'range';
 
     /**
      * Returns a human-readable label for the field type.
@@ -45,6 +49,10 @@ enum FieldType: string
             self::Repeater => 'Repeater',
             self::Json     => 'JSON',
             self::Color    => 'Color Picker',
+            self::Wysiwyg  => 'WYSIWYG Editor',
+            self::Url      => 'URL',
+            self::Time     => 'Time Picker',
+            self::Range    => 'Range Slider',
         };
     }
 
