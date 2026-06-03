@@ -1,6 +1,7 @@
 {
     "name": "hyder-kamran/laravel-custom-fields",
     "description": "A powerful, production-ready Laravel package for dynamic custom fields — attach any field type to any Eloquent model.",
+    "version": "1.0.0",
     "keywords": [
         "laravel",
         "custom-fields",
