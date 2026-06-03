@@ -21,6 +21,7 @@ enum FieldType: string
     case Image    = 'image';
     case Repeater = 'repeater';
     case Json     = 'json';
+    case Color    = 'color';
 
     /**
      * Returns a human-readable label for the field type.
@@ -43,6 +44,7 @@ enum FieldType: string
             self::Image    => 'Image Upload',
             self::Repeater => 'Repeater',
             self::Json     => 'JSON',
+            self::Color    => 'Color Picker',
         };
     }
 

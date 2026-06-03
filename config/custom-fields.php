@@ -100,6 +100,7 @@ return [
         'image'    => \HyderKamran\CustomFields\Fields\ImageField::class,
         'repeater' => \HyderKamran\CustomFields\Fields\RepeaterField::class,
         'json'     => \HyderKamran\CustomFields\Fields\JsonField::class,
+        'color'    => \HyderKamran\CustomFields\Fields\ColorField::class,
     ],
 
     /*
