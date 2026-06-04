@@ -5,7 +5,7 @@ A powerful, production-ready Laravel package that allows you to dynamically atta
 ## Requirements
 
 - PHP ^8.1
-- Laravel ^10.0 or ^11.0 or ^12.0
+- Laravel ^8.0 | ^9.0 | ^10.0 | ^11.0 | ^12.0
 
 ## Installation
 
