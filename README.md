@@ -20,12 +20,19 @@ Publish the configuration file and migrations:
 ```bash
 php artisan vendor:publish --tag="custom-fields-config"
 php artisan vendor:publish --tag="custom-fields-migrations"
+php artisan vendor:publish --tag="custom-fields-seeders"
 ```
 
 Run the database migrations:
 
 ```bash
 php artisan migrate
+```
+
+(Optional) Seed the database with some default custom field groups:
+
+```bash
+php artisan db:seed --class=CustomFieldSeeder
 ```
 
 ## Setup

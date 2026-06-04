@@ -38,6 +38,10 @@ class CustomFieldsServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../resources/views' => resource_path('views/vendor/custom-fields'),
             ], 'custom-fields-views');
+
+            $this->publishes([
+                __DIR__ . '/../database/seeders/CustomFieldSeeder.php' => database_path('seeders/CustomFieldSeeder.php'),
+            ], 'custom-fields-seeders');
         }
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'custom-fields');
